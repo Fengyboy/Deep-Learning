@@ -30,3 +30,33 @@ Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and instal
 > sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
 
 > sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include/
+
+For best performance, Caffe can be accelerated by NVIDIA cuDNN. Register for free at the cuDNN site, install it, then continue with these installation instructions. To compile with cuDNN set the USE_CUDNN := 1 flag set in your Makefile.config.
+
+Caffe requires BLAS as the backend of its matrix and vector computations. There are several implementations of this library. The choice is yours:
+* ATLAS: free, open source, and so the default for Caffe.
+* Intel MKL: commercial and optimized for Intel CPUs, with a free trial and student licenses.
+  1. Install MKL.
+  2. Set BLAS := mkl in Makefile.config
+* OpenBLAS: free and open source; this optimized and parallel BLAS could require more effort to install, although it might offer a speedup.
+  1. Install OpenBLAS
+  2. Set BLAS := open in Makefile.config
+
+### Python
+
+The main requirements are numpy and boost.python (provided by boost). pandas is useful too and needed for some examples.
+
+You can install the dependencies with
+> sudo -H pip install -r requirements.txt
+
+### Compilation
+Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python.
+> cp Makefile.config.example Makefile.config
+
+> make all -j ($nproc)
+
+> make test -j ($nproc)
+
+> make runtest
+
+To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first!
