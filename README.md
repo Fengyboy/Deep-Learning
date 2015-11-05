@@ -55,9 +55,9 @@ You can install the dependencies with
 Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python.
 > cp Makefile.config.example Makefile.config
 
-> make all -j ($nproc)
+> sudo make -j $(nproc)
 
-> make test -j ($nproc)
+> make test -j $(nproc)
 
 > make runtest
 
