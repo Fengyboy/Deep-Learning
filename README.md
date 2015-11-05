@@ -12,7 +12,7 @@ Download CUDA-7.5 from [here](https://developer.nvidia.com/cuda-downloads), and 
 
 > sudo apt-get install cuda 
 
-Add the following lines to our .bash_profile file in our home directory, in order to obtain the required compilation tools on our PATH:
+Add the following lines to our .bashrc file in our home directory, in order to obtain the required compilation tools on our PATH:
 > export PATH=/usr/local/cuda-7.5/bin:$PATH
 
 > export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
@@ -64,5 +64,5 @@ Now that you have the prerequisites, edit your Makefile.config to change the pat
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first. Then compile the Python inferface for Caffe as:
 > sudo make pycaffe
 
-Then add the path to Caffe Python files in "~/.bashrc" as:
+Then add the path to Caffe Python files in .bashrc file as:
 > export PYTHONPATH=/home/feng/shortbite/caffe/python:$PYTHONPATH
