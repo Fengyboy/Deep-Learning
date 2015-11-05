@@ -57,8 +57,8 @@ Now that you have the prerequisites, edit your Makefile.config to change the pat
 
 > sudo make -j $(nproc)
 
-> make test -j $(nproc)
+> sudo make test -j $(nproc)
 
-> make runtest
+> sudo make runtest
 
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first.
