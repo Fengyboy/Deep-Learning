@@ -18,7 +18,7 @@ Add the following lines to our .bash_profile file in our home directory, in orde
 > export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
 
 Install general dependencies for Caffe:
-> sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler gfortran
+> sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler gfortran liblapack-dev
 
 > sudo apt-get install --no-install-recommends libboost-all-dev
 
