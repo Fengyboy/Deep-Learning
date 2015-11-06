@@ -26,6 +26,8 @@ Install general dependencies for Caffe:
 
 > sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
 
+> sudo apt-get install gtk2-engines-pixbuf
+
 Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
 > tar -xzvf cudnn-7.0-linux-x64-v3.0-prod.tgz
 
