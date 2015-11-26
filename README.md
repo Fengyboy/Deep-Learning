@@ -3,7 +3,10 @@ My code in deep learning and computer vision.
 
 ## Installation of Caffe on Ubuntu 14.04 LTS.
 The first task is to make sure that you have the GNU compiler collection (GCC) tools installed. This is carried out by installing the build-essential package:
-> sudo apt-get install build-essential
+
+```
+sudo apt-get install build-essential
+```
 
 Download CUDA-7.5 from [here](https://developer.nvidia.com/cuda-downloads), and install it as:
 > sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb 
