@@ -30,11 +30,11 @@ sudo apt-get install gtk2-engines-pixbuf
 ```
 
 Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
-> tar -xzvf cudnn-7.0-linux-x64-v3.0-prod.tgz
-
-> sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
-
-> sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include/
+```
+tar -xzvf cudnn-7.0-linux-x64-v3.0-prod.tgz
+sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
+sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include/
+```
 
 For best performance, Caffe can be accelerated by NVIDIA cuDNN. Register for free at the cuDNN site, install it, then continue with these installation instructions. To compile with cuDNN set the USE_CUDNN := 1 flag set in your Makefile.config.
 
@@ -52,20 +52,25 @@ Caffe requires BLAS as the backend of its matrix and vector computations. There 
 The main requirements are numpy and boost.python (provided by boost). pandas is useful too and needed for some examples.
 
 You can install the dependencies with
-> sudo -H pip install -r requirements.txt
+```
+sudo -H pip install -r requirements.txt
+```
 
 ### Compilation
 Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python.
-> cp Makefile.config.example Makefile.config
-
-> sudo make -j $(nproc)
-
-> sudo make test -j $(nproc)
-
-> make runtest
+```
+cp Makefile.config.example Makefile.config
+sudo make -j $(nproc)
+sudo make test -j $(nproc)
+make runtest
+```
 
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first. Then compile the Python inferface for Caffe as:
-> sudo make pycaffe
+```
+sudo make pycaffe
+```
 
 Then add the path to Caffe Python files in .bashrc file as:
-> export PYTHONPATH=/home/feng/shortbite/caffe/python:$PYTHONPATH
+```
+export PYTHONPATH=/home/feng/shortbite/caffe/python:$PYTHONPATH
+```
