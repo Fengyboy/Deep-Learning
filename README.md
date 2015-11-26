@@ -15,20 +15,19 @@ sudo apt-get install cuda
 ```
 
 Add the following lines to our .bashrc file in our home directory, in order to obtain the required compilation tools on our PATH:
-> export PATH=/usr/local/cuda-7.5/bin:$PATH
-
-> export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
+```
+export PATH=/usr/local/cuda-7.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
+```
 
 Install general dependencies for Caffe:
-> sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler gfortran liblapack-dev
-
-> sudo apt-get install --no-install-recommends libboost-all-dev
-
-> sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-
-> sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
-
-> sudo apt-get install gtk2-engines-pixbuf
+```
+sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler gfortran liblapack-dev
+sudo apt-get install --no-install-recommends libboost-all-dev
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
+sudo apt-get install gtk2-engines-pixbuf
+```
 
 Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
 > tar -xzvf cudnn-7.0-linux-x64-v3.0-prod.tgz
