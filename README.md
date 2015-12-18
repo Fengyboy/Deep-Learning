@@ -24,7 +24,7 @@ Install general dependencies for Caffe:
 ```
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler gfortran liblapack-dev
 sudo apt-get install --no-install-recommends libboost-all-dev
-sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev ibeigen3-dev
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev libeigen3-dev
 sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
 sudo apt-get install gtk2-engines-pixbuf
 ```
