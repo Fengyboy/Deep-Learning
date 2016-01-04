@@ -32,7 +32,7 @@ sudo apt-get install gtk2-engines-pixbuf
 
 Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
 ```
-tar -xzvf cudnn-7.0-linux-x64-v3.0-prod.tgz
+tar -xzvf cudnn-7.0-linux-x64-vX.X-prod.tgz
 sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
 sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include/
 ```
