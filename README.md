@@ -61,14 +61,14 @@ sudo -H pip install -r requirements.txt
 Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python.
 ```
 cp Makefile.config.example Makefile.config
-sudo make -j $(nproc)
-sudo make test -j $(nproc)
+make -j $(nproc)
+make test -j $(nproc)
 make runtest
 ```
 
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first. Then compile the Python inferface for Caffe as:
 ```
-sudo make pycaffe
+make pycaffe
 ```
 
 Then add the path to Caffe Python files in .bashrc file as:
