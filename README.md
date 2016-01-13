@@ -28,6 +28,7 @@ sudo apt-get install --no-install-recommends libboost-all-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev libeigen3-dev
 sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
 sudo apt-get install gtk2-engines-pixbuf
+sudo apt-get install python-opencv
 ```
 
 Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
