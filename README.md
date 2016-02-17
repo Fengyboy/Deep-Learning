@@ -67,6 +67,8 @@ make test -j $(nproc)
 make runtest
 ```
 
+The `Makefile` may need to be modified from `PYTHON_LIBRARIES := boost_python python2.7` to `PYTHON_LIBRARIES := boost_python python3.4` when compiling it for `Python3`.
+
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first. Then compile the Python inferface for Caffe as:
 ```
 make pycaffe
