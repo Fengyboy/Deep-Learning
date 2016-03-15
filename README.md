@@ -31,7 +31,7 @@ sudo apt-get install gtk2-engines-pixbuf
 sudo apt-get install python-opencv
 ```
 
-Download NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
+Download NVIDIA cuDNN from [here](https://dl.dropboxusercontent.com/u/7460583/cudnn-7.0-linux-x64-v4.0-prod.tgz) and install as follow:
 ```
 tar -xzvf cudnn-7.0-linux-x64-vX.X-prod.tgz
 sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
