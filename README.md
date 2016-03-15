@@ -82,3 +82,7 @@ Then add the path to Caffe Python files in .bashrc file as:
 ```
 export PYTHONPATH=/home/feng/shortbite/caffe/python:$PYTHONPATH
 ```
+If en error like `libdc1394 error: Failed to initialize libdc1394` pops up, you need to run the following:
+```
+sudo ln /dev/null /dev/raw1394
+```
