@@ -86,3 +86,10 @@ If en error like `libdc1394 error: Failed to initialize libdc1394` pops up, you 
 ```
 sudo ln /dev/null /dev/raw1394
 ```
+
+A Python3 virtual evironment can be created by:
+```
+virtualenv -p /usr/bin/python3 yourenv
+source yourenv/bin/activate
+pip install package-name
+```
