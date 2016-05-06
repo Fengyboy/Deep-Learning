@@ -93,3 +93,7 @@ virtualenv -p /usr/bin/python3 yourenv
 source yourenv/bin/activate
 pip install package-name
 ```
+Delete all docker containers by:
+```
+docker rm `docker ps --no-trunc -aq`
+```
