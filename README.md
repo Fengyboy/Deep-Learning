@@ -1,7 +1,7 @@
 # Deep-Learning
 My code in deep learning and computer vision.
 
-## Installation of Caffe on Ubuntu 14.04 LTS.
+## Installation of Caffe on Ubuntu 16.04 LTS.
 The first task is to make sure that you have the GNU compiler collection (GCC) tools installed. This is carried out by installing the build-essential package:
 ```
 sudo apt-get install build-essential
@@ -66,6 +66,10 @@ LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/aarch64-linux-gnu
 ```
 Then execute the following commands.
 ```
+cd /usr/lib/x86_64-linux-gnu/
+sudo ln -s libhdf5_serial.10.1.0 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.10 libhdf5_hl.so
+cd ~
 cp Makefile.config.example Makefile.config
 make -j $(nproc)
 make test -j $(nproc)
