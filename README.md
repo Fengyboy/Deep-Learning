@@ -17,6 +17,7 @@ sudo apt-get install cuda
 Add the following lines to our .bashrc file in our home directory, in order to obtain the required compilation tools on our PATH:
 ```
 export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```
 
 Install general dependencies for Caffe:
@@ -62,7 +63,7 @@ Now that you have the prerequisites, edit your Makefile.config to change the pat
 ```
 # Whatever else you find you need goes here.
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/aarch64-linux-gnu/hdf5/serial
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
 ```
 Then execute the following commands.
 ```
