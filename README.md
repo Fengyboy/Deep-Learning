@@ -7,7 +7,7 @@ The first task is to make sure that you have the GNU compiler collection (GCC) t
 sudo apt-get install build-essential
 ```
 
-Download CUDA-7.5 from [here](https://developer.nvidia.com/cuda-downloads), and install it as:
+Download CUDA-8.0 from [here](https://developer.nvidia.com/cuda-downloads), and install it as:
 ```
 sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb 
 sudo apt-get update
@@ -16,8 +16,7 @@ sudo apt-get install cuda
 
 Add the following lines to our .bashrc file in our home directory, in order to obtain the required compilation tools on our PATH:
 ```
-export PATH=/usr/local/cuda-7.5/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda/bin:$PATH
 ```
 
 Install general dependencies for Caffe:
@@ -28,14 +27,14 @@ sudo apt-get install --no-install-recommends libboost-all-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev libeigen3-dev
 sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
 sudo apt-get install gtk2-engines-pixbuf
-sudo apt-get install python-opencv
+sudo apt-get install python-opencv libatlas-base-dev
 ```
 
-Download NVIDIA cuDNN from [here](https://dl.dropboxusercontent.com/u/7460583/cudnn-7.0-linux-x64-v4.0-prod.tgz) and install as follow:
+Download the latest NVIDIA cuDNN from [here](https://developer.nvidia.com/cudnn) and install as follow:
 ```
-tar -xzvf cudnn-7.0-linux-x64-vX.X-prod.tgz
-sudo cp cuda/lib64/* /usr/local/cuda-7.5/lib64/
-sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include/
+tar -xzvf cudnn-8.0-linux-x64-vX.X-prod.tgz
+sudo cp cuda/lib64/* /usr/local/cuda/lib64/
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
 ```
 
 For best performance, Caffe can be accelerated by NVIDIA cuDNN. Register for free at the cuDNN site, install it, then continue with these installation instructions. To compile with cuDNN set the USE_CUDNN := 1 flag set in your Makefile.config.
@@ -59,18 +58,18 @@ sudo -H pip install -r requirements.txt
 ```
 
 ### Compilation
-Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python.
+Now that you have the prerequisites, edit your Makefile.config to change the paths for your setup The defaults should work, but uncomment the relevant lines if using Anaconda Python. For hdf5 to work, you need add the following lines to Make
+```
+# Whatever else you find you need goes here.
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/aarch64-linux-gnu/hdf5/serial
+```
+Then execute the following commands.
 ```
 cp Makefile.config.example Makefile.config
 make -j $(nproc)
 make test -j $(nproc)
 make runtest
-```
-
-The `Makefile` may need to be modified from `PYTHON_LIBRARIES := boost_python python2.7` to `PYTHON_LIBRARIES := boost_python3 python3.4` when compiling it for `Python3`. In addition, the following `link` should be added.
-```
-cd /usr/lib/x86_64-linux-gnu/
-sudo ln -s libboost_python-py34.so libboost_python3.so
 ```
 
 To compile the Python and MATLAB wrappers do make pycaffe and make matcaffe respectively. Be sure to set your MATLAB and Python paths in Makefile.config first. Then compile the Python inferface for Caffe as:
