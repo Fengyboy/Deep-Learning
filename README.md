@@ -101,3 +101,7 @@ Delete all docker containers by:
 ```
 docker rm `docker ps --no-trunc -aq`
 ```
+Set tiff to the correct version for openslide
+```
+sudo apt-get install libtiff5=4.0.6-1 libtiff5-dev=4.0.6-1 libtiffxx5=4.0.6-1
+```
