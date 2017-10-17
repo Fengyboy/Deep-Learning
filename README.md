@@ -105,3 +105,7 @@ Set tiff to the correct version for openslide
 ```
 sudo apt-get install libtiff5=4.0.6-1 libtiff5-dev=4.0.6-1 libtiffxx5=4.0.6-1
 ```
+User SLURM to request GPU resources
+```
+srun --gres=gpu:1 -w HPC1003 --pty ./bash
+```
